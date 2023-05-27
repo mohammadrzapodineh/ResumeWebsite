@@ -1,0 +1,14 @@
+{% for portfillo in portfillos  %}
+<div class="item col-lg-4 col-sm-6 graphic">
+    <figure>
+        <img alt="" src="{{ portfillo.image.url }}">
+        <figcaption>
+            <h3>{{ portfillo.title }}</h3>
+            <p>{% for p_category in portfillo.category.all %}{{ p_category.title }},{% endfor %}</p><i class="fas fa-image"></i>
+            {% if portfillo.image_link %}
+            <a class="image-link" href="{{ portfillo.image_link.url }}"></a>
+            {% endif %}
+        </figcaption>
+    </figure>
+</div>
+{% endfor %}

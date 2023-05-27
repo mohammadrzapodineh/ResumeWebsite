@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+	<!-- Meta -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Title -->
+	<title>قالب Baha - قالب شخصی باها</title>
+
+
+	{% include 'shared/header_refrences.html'  %}
+</head>
+
+<body>
+
+	{% include 'shared/them_options.html' %}
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="loading-area">
+			<div class="circle"></div>
+		</div>
+		<div class="left-side"></div>
+		<div class="right-side"></div>
+	</div>
+
+	<!-- Main Site -->
+	<div id="home">
+		<div id="about">
+			<div id="resume">
+				<div id="portfolio">
+					<div id="blog">
+						<div id="contact">
+
+							<div class="header-mobile">
+								<a class="header-toggle"><i class="fas fa-bars"></i></a>
+				
+							</div>
+
+							<!-- Left Block -->
+							<nav class="header-main" data-simplebar>
+
+								<!-- Logo -->
+								<div class="logo">
+									<img src="img/logo.png" alt="">
+								</div>
+
+								<ul>
+									<li data-tooltip="خانه" data-position="top">
+										<a href="#home" class="icon-h fas fa-house-damage"></a>
+									</li>
+									<li data-tooltip="درباره" data-position="top">
+										<a href="#about" class="icon-a fas fa-user-tie"></a>
+									</li>
+									<li data-tooltip="رزومه" data-position="top">
+										<a href="#resume" class="icon-r fas fa-address-book"></a>
+									</li>
+									<li data-tooltip="نمونه‌کارها" data-position="top">
+										<a href="#portfolio" class="icon-p fas fa-briefcase"></a>
+									</li>
+									
+									<li data-tooltip="تماس" data-position="bottom">
+										<a href="#contact" class="icon-c fas fa-envelope"></a>
+									</li>
+								</ul>
+
+								<!-- Sound wave -->
+								<a class="music-bg">
+									<div class="lines">
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+									<p> صدا </p>
+								</a>
+							</nav>
+
+							<!-- Home Section -->
+							<div class="pt-home" style="background-image: url('/static/img/home-bg.jpg')">
+
+								<!-- Background Line -->
+								<div class="bg-lines">
+									<div class="bg-line"></div>
+									<div class="bg-line"></div>
+									<div class="bg-line"></div>
+									<div class="bg-line"></div>
+									<div class="bg-line"></div>
+								</div>
+
+								<section>
+
+									<!-- Banner -->
+									<div class="banner">
+										<h1>{{ biography.name }} </h1>
+										<p class="cd-headline rotate-1">
+											<span class="cd-words-wrapper">
+												<b class="is-visible">مربی</b>
+												<b>برنامه نویس</b>
+												<b>فریلنسر</b>
+											</span>
+										</p>
+									</div>
+
+									<!-- Language -->
+									<div class="lang">
+										<ul>
+											<li><a href="#" class="active">فارسی</a></li>
+											<!-- <li><a href="#">انگلیسی</a></li> -->
+										</ul>
+									</div>
+
+									{% if socialmedia %}
+										<!-- Social -->
+										<div class="social">
+											<ul>
+												{% for social in socialmedia  %}
+												<li><a href="{{ social.link }}"><i class="{{ social.icon }}"></i></a></li>
+												{% endfor %}
+				
+											</ul>
+										</div>
+									{% endif %}
+								</section>
+							</div>
+
+							<!-- About Section -->
+							<div class="page pt-about" data-simplebar>
+								<section class="container">
+
+									<!-- Section Title -->
+									<div class="header-page mt-70 mob-mt">
+										<h2>درباره من</h2>
+										<span></span>
+									</div>
+
+									<!-- Personal Info Start -->
+									<div class="row mt-100">
+
+										<!-- Information Block -->
+										<div class="col-lg-12 col-sm-12">
+											<div class="info box-1">
+												<div class="row">
+													<div class="col-lg-3 col-sm-4">
+														<div class="photo">
+															<img alt="" src="{{ biography.avatar.url }}">
+														</div>
+													</div>
+													<div class="col-lg-9 col-sm-8">
+														<h4>{{ biography.name }}</h4>
+														<div class="loc">
+															<i class="fas fa-map-marked-alt"></i> {{ biography.lived_in }}
+														</div>
+														<p>
+															{{ biography.biography }}
+														</p>
+														
+										
+													</div>
+
+													<!-- Icon Info -->
+													<div class="col-lg-3 col-sm-4">
+														<div class="info-icon">
+															<i class="fas fa-award"></i>
+															<div class="desc-icon">
+																<h6>{{ biography.expreince }}</h6>
+																<p>تجربه</p>
+															</div>
+														</div>
+													</div>
+
+													<!-- Icon Info -->
+													<div class="col-lg-3 col-sm-4">
+														<div class="info-icon">
+															<i class="fas fa-certificate"></i>
+															<div class="desc-icon">
+																<h6>{{ biography.total_projects }}+ پروژه</h6>
+																<p>اتمام یافته</p>
+															</div>
+														</div>
+													</div>
+
+													<!-- Icon Info -->
+													<div class="col-lg-3 col-sm-4">
+														<div class="info-icon">
+															<i class="fas fa-user-astronaut"></i>
+															<div class="desc-icon">
+																<h6>فریلنس</h6>
+																<p>آماده</p>
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-3 col-sm-12 pt-50">
+														<a href="#" class="btn-st">دریافت رزومه</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									{% if favorites %}
+										<!-- Interests Row Start -->
+										<div class="row mt-100">
+
+											<!-- Header Block -->
+											<div class="col-md-12">
+												<div class="header-box mb-50">
+													<h3>علایق من</h3>
+												</div>
+											</div>
+	
+											<div class="col-lg-12 col-sm-12">
+												<div class="box-2">
+													<div class="row">
+														{% for favorite in favorites  %}
+														<!-- Interests Item -->
+														<div class="col-lg-3 col-sm-6">
+															<div class="inter-icon">
+																<i class="{{ favorite.icon }}"></i>
+																<div class="desc-inter">
+																	<h6>{{ favorite.title }}</h6>
+																</div>
+															</div>
+														</div>
+														{% endfor %}
+													</div>
+												</div>
+											</div>
+										</div>
+									{% endif %}
+
+									<!-- Service Row Start -->
+									{% if services %}
+									<div class="row mt-100">
+
+										<!-- Header Block -->
+										<div class="col-md-12">
+											<div class="header-box mb-50">
+												<h3>خدمات</h3>
+											</div>
+										</div>
+
+										{% for service in services %}
+										<!-- Service Item -->
+										<div class="col-lg-6 col-sm-6">
+											<div class="service box-1 mb-40">
+												<i class="{{ service.icon }}"></i>
+												<h4>{{ service.title }}</h4>
+												<p>{{ service.description }}</p>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+									{% endif %}
+
+								</section>
+							</div>
+
+							<!-- Resume Section -->
+							<div class="page pt-resume" data-simplebar>
+								<section class="container">
+
+									<!-- Section Title -->
+									<div class="header-page mt-70 mob-mt">
+										<h2>رزومه</h2>
+										<span></span>
+									</div>
+
+								{% if workexperinces %}
+									<!-- Experience & Education Row Start -->
+									<div class="row mt-100">
+
+										<!-- Experience Column Start -->
+										<div class="col-lg-6 col-sm-12">
+
+											<!-- Header Block -->
+											<div class="header-box mb-50">
+												<h3>سوابق کاری</h3>
+											</div>
+
+											<div class="experience box-1">
+
+												{% for workexperince in workexperinces %}
+												<!-- Experience Item -->
+												<div class="item">
+													<div class="main">
+														<h4>{{ workexperince.title }}</h4>
+														<p><i class="far fa-calendar-alt"></i> {{ workexperince.company }} |  {{ workexperince.date_joined|date:"Y" }} - {{ workexperince.date_left|date:"Y" }}</p>
+													</div>
+													<p>{{ workexperince.description }}</p>
+												</div>
+
+												{% endfor %}
+									
+
+										
+											</div>
+										</div>
+									{% endif %}				
+									{% if educationals %}
+										<!-- Education Column Start -->
+										<div class="col-lg-6 col-sm-12">
+
+											<!-- Header Block -->
+											<div class="header-box mb-50 mob-box-mt">
+												<h3>سوابق تحصیلی</h3>
+											</div>
+
+											<div class="experience box-2">
+												{% for educational in educationals  %}
+												<!-- Education Item -->
+												<div class="item">
+													<div class="main">
+														<h4>{{ educational.title }}</h4>
+														<p><i class="far fa-calendar-alt"></i>{{ educational.college }} | {{ educational.date_joined|date:"Y" }}-{{ educational.date_left|date:"Y" }} </p>
+													</div>
+													<p>{{ educational.description }}</p>
+												</div>
+												{% endfor %}
+											</div>
+										</div>
+									{%  endif %}
+									</div>
+								
+
+									{% if skills %}
+										<!-- Skills Row Start -->
+										<div class="row mt-100">
+
+											<!-- Header Block -->
+											<div class="col-md-12">
+												<div class="header-box mb-50">
+													<h3>مهارت ها</h3>
+												</div>
+											</div>
+										</div>
+	
+										<div class="box-1 skills">
+											<div class="row">
+												<div class="col-md-6">
+	
+												{%  for skill in skills %}
+													<!-- Skill Item -->
+													<div class="skill-item">
+														<h4 class="progress-title">
+															{{ skill.title }}
+														</h4>
+														<div class="progress">
+															<div class="progress-bar" style="width:{{ skill.persent }}%">
+																<div class="progress-value">{{ skill.persent }}%</div>
+															</div>
+														</div>
+													</div>
+												{% endfor %}
+												</div>
+	
+												
+											</div>
+										</div>
+									{% endif %}
+
+							
+								</section>
+							</div>
+
+						{% if portfillos %}
+							<!-- Portfolio Section -->
+							<div class="page pt-portfolio" data-simplebar>
+								<section class="container">
+
+									<!-- Section Title -->
+									<div class="header-page mt-70 mob-mt">
+										<h2>نمونه‌کارها</h2>
+										<span></span>
+									</div>
+
+									{% if categories %}
+									<!-- Portfolio Filter Row Start -->
+									<div class="row mt-100">
+										<div class="col-lg-12 col-sm-12 portfolio-filter">
+											<ul>
+												{% for category in categories %}
+												<li category_id="{{ category.id }}" class="category" data-filter=".brand">{{ category.title }}</li>
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+									{% endif %}
+
+									<!-- Portfolio Item Row Start -->
+									<div class="row portfolio-items mt-100 mb-100" id="portfillo_section">
+										<!-- Portfolio Item -->
+										{% include 'shared/component/portfillo/portfillo_component_list.html' with portfillos=portfillos %}
+									</div>
+								</section>
+							</div>
+						{% endif %}
+					
+
+							<!-- Contact Section -->
+							<div class="page pt-contact" data-simplebar>
+								<section class="container">
+
+									<!-- Section Title -->
+									<div class="header-page mt-70 mob-mt">
+										<h2>تماس</h2>
+										<span></span>
+									</div>
+
+									<!-- Form Start -->
+									{% include 'shared/component/contact/contact_form.html'  %}
+
+									<!-- Contact Info -->
+									<div class="box-2 contact-info">
+										<div class="row">
+											<div class="col-lg-4 col-sm-12 info">
+												<i class="fas fa-paper-plane"></i>
+												<p>{{ contact_information.email }}</p>
+												<span>ایمیل</span>
+											</div>
+											<div class="col-lg-4 col-sm-12 info">
+												<i class="fas fa-map-marker-alt"></i>
+												<p>{{ contact_information.address }}</p>
+												<span>آدرس</span>
+											</div>
+											<div class="col-lg-4 col-sm-12 info">
+												<i class="fas fa-phone"></i>
+												<p><span class="ltr-text">{{ contact_information.phone }}</span></p>
+												<span>تلفن</span>
+											</div>
+										</div>
+									</div>
+
+								
+								</section>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include 'shared/footer_refrences.html'  %}
+
+</body>
+
+</html>
